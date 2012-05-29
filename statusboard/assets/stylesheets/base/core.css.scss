@@ -1,0 +1,30 @@
+@import "base/mixins";
+
+* {
+  margin:0;
+  padding:0;
+}
+html, body {
+  height:100%;
+}
+body {
+  @include helvetica;
+  background-color:#222;
+  color:#ddd;
+  position:relative;
+}
+a {
+  text-decoration:none;
+}
+
+.clear {
+  clear:both;
+}
+
+.app {
+  @include block_rel_left;
+  height:50%;
+  width:33%;
+
+  background-color:rgba(255, 255, 255, 0.1);
+}

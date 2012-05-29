@@ -1,0 +1,24 @@
+%script{ :src => "//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" }
+
+-# Backbone
+= javascript_script_tag "assets/underscore-min.js"
+= javascript_script_tag "assets/backbone.min.js"
+
+-# HTML5 Boilerplate
+= javascript_script_tag "assets/modernizr-custom.js"
+
+= javascript_script_tag "assets/handlebars-1.0.0.beta.6.js"
+= javascript_script_tag "assets/jquery.sparkline.min.js"
+
+= javascript_script_tag "assets/application.js"
+
+-# Initialize apps
+- settings.apps.each do |app|
+  = javascript_script_tag "assets/#{app}/core.js"
+
+-# Foundation code
+= javascript_script_tag "assets/boot.js"
+
+:javascript
+  // TODO Find a better way.
+  Statusboard.dark_sky_api_key = "#{settings.dark_sky_api_key}";
