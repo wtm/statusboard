@@ -9,6 +9,7 @@ window.Statusboard =
 	Collections: {}
 	Models: {}
 	Views: {}
+	Routers: {}
 	State: {}
 	Meta:
 		AuthorName: "Jordan Cole"
