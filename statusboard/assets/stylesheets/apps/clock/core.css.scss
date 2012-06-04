@@ -47,7 +47,8 @@
 
       &:after {
         @include block_abs;
-        border-top:1px solid #2b2b2b;
+        border-bottom:1px solid #777;
+        border-top:1px solid #333;
         content:" ";
         left:0;
         right:0;
