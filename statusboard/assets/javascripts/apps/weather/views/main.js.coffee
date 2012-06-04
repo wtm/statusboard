@@ -18,11 +18,12 @@ jQuery ($) ->
 				cache: false
 				dataType: "jsonp"
 
+			# Auto-update every five minutes
 			Weather.State.dark_sky_autofetch = setInterval ->
 				dark_sky_data.fetch
 					cache: false
 					dataType: "jsonp"
-			, 30000
+			, 300000
 
 			dark_sky = new Weather.Views.DarkSky
 				collection: dark_sky_data
