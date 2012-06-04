@@ -45,7 +45,7 @@ jQuery ($) ->
 		render: ->
 			collection = @collection
 
-			@$el.children().empty().remove
+			@$el.children().empty().remove()
 			$view = @$el
 
 			_sparkline = @_draw_sparkline
