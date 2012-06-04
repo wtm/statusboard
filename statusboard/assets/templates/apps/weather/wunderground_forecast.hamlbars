@@ -1,5 +1,5 @@
 .temp
-  {{feelslike.english}}°
+  {{feelslike.english}}
 
 .icon
   %img{ :src => "{{icon_url}}" }
