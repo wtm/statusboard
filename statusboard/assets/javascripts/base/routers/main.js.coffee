@@ -4,11 +4,10 @@ jQuery ($) ->
 			"": "index"
 
 		index: ->
-			# Weather
-			weather = new Weather.Views.Main
+			clock = new Clock.Views.Main
+			$(document.body).append clock.render().el
 
-			weather.render()
-			$weather = $(weather.el)
-			$(document.body).append $weather
+			weather = new Weather.Views.Main
+			$(document.body).append weather.render().el
 
 	window.StatusboardApp = new Statusboard.Routers.Main()

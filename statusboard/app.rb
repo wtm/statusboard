@@ -4,7 +4,7 @@ class StatusboardApp < Sinatra::Base
 
 	# http://stackoverflow.com/a/4525933/672403
 	configure do
-		set :apps, ["apps/weather", "base"]
+		set :apps, ["apps/clock", "apps/weather", "base"]
 
 		%w(dark_sky_api_key wunderground_api_key).each do |setting|
 			set setting.to_sym, (ENV[setting.upcase] || "")
