@@ -3,7 +3,10 @@ jQuery ($) ->
 		tagName: "section"
 		template: Handlebars.templates["apps/weather/dark_sky_forecast"]
 
-		initialize: -> _.bindAll @, "render"
+		initialize: ->
+			_.bindAll @, "render"
+
+			@collection.bind "reset", @render
 
 		render: ->
 			@$el.html @template @model.toJSON()
