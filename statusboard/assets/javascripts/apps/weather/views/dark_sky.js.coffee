@@ -32,10 +32,10 @@ jQuery ($) ->
 				type: "line"
 				width: "100%"
 			_max_options = $.extend {}, _base_options,
-				fillColor: "rgba(68, 68, 85, 0.8)"
+				fillColor: "rgba(92, 114, 135, 0.5)"
 			_min_options = $.extend {}, _base_options,
 				composite: true
-				fillColor: "rgba(85, 85, 102, 0.8)"
+				fillColor: "rgba(119, 127, 135, 0.5)"
 
 			[_min, _max] = @_calculate_min_max data
 
