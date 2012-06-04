@@ -1,0 +1,38 @@
+@import "base/mixins";
+
+.app.twitter {
+  overflow-y:scroll;
+
+  .tweet_stream {
+    .item {
+      @include block_rel;
+      font-size:13px;
+      min-height:30px;
+      padding:7px 10px 7px 48px;
+
+      .text, .user {
+        @include block_rel;
+      }
+
+      .text {
+        color:#aaa;
+      }
+
+      .avatar {
+        @include block_abs;
+        @include round(3px);
+        left:10px;
+        margin-right:10px;
+        top:8px;
+      }
+
+      .user {
+        color:#999;
+        font-style:italic;
+      }
+    }
+    .item + .item {
+      border-top:1px solid #222;
+    }
+  }
+}

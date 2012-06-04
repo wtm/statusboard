@@ -11,4 +11,9 @@ jQuery ($) ->
 			weather = new Weather.Views.Main
 			$(document.body).append weather.render().el
 
+			twitter = new Twitter.Views.Main
+			$(document.body).append twitter.render().el
+			# 5 minutes
+			Twitter.State.autofetch = setInterval (-> twitter.render()), 300000
+
 	window.StatusboardApp = new Statusboard.Routers.Main()

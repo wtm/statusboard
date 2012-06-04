@@ -31,5 +31,15 @@ a {
   background-color:#2b2b2b;
   height:48.5%;
   margin:1% 0 1% 1%;
+  overflow:hidden;
   width:31%;
+}
+
+.avatar {
+  @include block_rel;
+  @include inner_shadow(0, 0, 2px, 0, rgba(0, 0, 0, 0.2));
+  @include round(1px);
+}
+.avatar.x30 {
+  @include avatar_size(30px);
 }
