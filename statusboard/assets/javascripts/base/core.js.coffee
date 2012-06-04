@@ -1,5 +1,4 @@
 #= require_tree ./routers
-
 #= require_tree ../../templates/base
 
 window.Statusboard =
@@ -9,6 +8,7 @@ window.Statusboard =
 	Routers: {}
 	State: {}
 	Meta:
+		ApplicationName: "Statusboard"
 		AuthorName: "Jordan Cole"
 		AuthorURL: "http://ratafia.info"
 		IconPath: ""

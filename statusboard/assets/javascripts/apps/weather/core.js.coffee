@@ -1,16 +1,17 @@
+#= require ./boot
 #= require_tree ./models
 #= require_tree ./collections
 #= require_tree ./views
+#= require_tree ../../../templates/apps/weather
 
-#= require_tree ../../../templates/apps/darksky
-
-window.DarkSky =
+window.Weather =
 	Collections: {}
 	Models: {}
 	Views: {}
 	Routers: {}
 	State: {}
 	Meta:
+		ApplicationName: "Weather"
 		AuthorName: "Jordan Cole"
 		AuthorURL: "http://ratafia.info"
 		IconPath: ""

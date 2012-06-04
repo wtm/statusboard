@@ -4,17 +4,11 @@ jQuery ($) ->
 			"": "index"
 
 		index: ->
-			# Dark Sky
-			darksky_data = DarkSky.Collections.predictions
-			darksky = new DarkSky.Views.Main
-				collection: darksky_data
+			# Weather
+			weather = new Weather.Views.Main
 
-			darksky_data.fetch
-				cache: false
-				dataType: "jsonp"
-
-			darksky.render()
-			$darksky = $(darksky.el)
-			$(document.body).append $darksky
+			weather.render()
+			$weather = $(weather.el)
+			$(document.body).append $weather
 
 	window.StatusboardApp = new Statusboard.Routers.Main()

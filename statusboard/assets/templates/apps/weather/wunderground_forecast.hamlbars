@@ -1,0 +1,5 @@
+.temp
+  {{feelslike.english}}°
+
+.icon
+  %img{ :src => "{{icon_url}}" }

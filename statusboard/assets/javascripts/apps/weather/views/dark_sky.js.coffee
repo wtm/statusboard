@@ -1,7 +1,7 @@
 jQuery ($) ->
-	class DarkSky.Views.Main extends Backbone.View
+	class Weather.Views.DarkSky extends Backbone.View
 		tagName: "section"
-		className: "app darksky"
+		id: "dark_sky"
 
 		initialize: ->
 			_.bindAll @, "render", "_draw_sparkline"
@@ -32,10 +32,10 @@ jQuery ($) ->
 				type: "line"
 				width: "100%"
 			_max_options = $.extend {}, _base_options,
-				fillColor: "rgba(68, 68, 68, 0.8)"
+				fillColor: "rgba(68, 68, 85, 0.8)"
 			_min_options = $.extend {}, _base_options,
 				composite: true
-				fillColor: "rgba(85, 85, 85, 0.8)"
+				fillColor: "rgba(85, 85, 102, 0.8)"
 
 			[_min, _max] = @_calculate_min_max data
 
@@ -51,14 +51,14 @@ jQuery ($) ->
 			_sparkline = @_draw_sparkline
 
 			collection.each (item) ->
-				forecast = new DarkSky.Views.Forecast
+				forecast = new Weather.Views.DarkSkyForecast
 					collection: collection
 					model: item
 
 				$view.append forecast.render().el
 
-				# Trying to render the sparkline in `DarkSky.Views.Forecast` fails
-				# because the view hasn't been inserted yet.
+				# Trying to render the sparkline in `Weather.Views.dark_sky_forecast`
+				# fails because the view hasn't been inserted yet.
 				_sparkline item.get("hourPrecipitation"), ".forecast.next_hour"
 
 			@

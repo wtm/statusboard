@@ -1,7 +1,7 @@
 jQuery ($) ->
-	class DarkSky.Views.Forecast extends Backbone.View
+	class Weather.Views.DarkSkyForecast extends Backbone.View
 		tagName: "section"
-		template: Handlebars.templates["apps/darksky/forecast"]
+		template: Handlebars.templates["apps/weather/dark_sky_forecast"]
 
 		initialize: ->
 			_.bindAll @, "render"

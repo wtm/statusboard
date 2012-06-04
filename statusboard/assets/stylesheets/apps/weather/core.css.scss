@@ -1,0 +1,70 @@
+@import "base/mixins";
+
+.app.weather {
+  overflow:hidden;
+
+  #dark_sky {
+    .forecast.next_hour {
+      @include block_rel;
+      height:80px;
+      margin-top:15px;
+      width:100%;
+    }
+
+    .current_status {
+      @include block_abs;
+      color:#666;
+      font-size:18px;
+      font-style:italic;
+      left:10px;
+      top:10px;
+    }
+
+    .current_temp {
+      @include block_abs;
+      color:#666;
+      cursor:default;
+      font-size:144px;
+      right:-20px;
+      top:-42px;
+    }
+  }
+
+  #wunderground {
+    @include block_abs;
+    top:105px;
+
+    .item {
+      @include block_rel_left;
+      height:55px;
+      margin-left:9px;
+      width:55px;
+
+      .icon, .temp {
+        @include block_abs;
+        height:50px;
+        width:50px;
+      }
+
+      .icon {
+        left:0;
+        top:0;
+        -moz-mask: url("/assets/apps/weather/wunderground mask (bottom).png");
+        -o-mask: url("/assets/apps/weather/wunderground mask (bottom).png");
+        -webkit-mask: url("/assets/apps/weather/wunderground mask (bottom).png");
+        mask: url("/assets/apps/weather/wunderground mask (bottom).png");
+      }
+
+      .temp {
+        bottom:0;
+        font-size:24px;
+        line-height:1em;
+        right:0;
+        -moz-mask: url("/assets/apps/weather/wunderground mask (top).png");
+        -o-mask: url("/assets/apps/weather/wunderground mask (top).png");
+        -webkit-mask: url("/assets/apps/weather/wunderground mask (top).png");
+        mask: url("/assets/apps/weather/wunderground mask (top).png");
+      }
+    }
+  }
+}
