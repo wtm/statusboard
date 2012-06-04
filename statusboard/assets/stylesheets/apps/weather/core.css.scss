@@ -12,8 +12,6 @@
 }
 
 .app.weather {
-  overflow:hidden;
-
   #dark_sky {
     .forecast.next_hour {
       @include block_rel;
