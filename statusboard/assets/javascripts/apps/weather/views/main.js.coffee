@@ -22,7 +22,7 @@ jQuery ($) ->
 				dark_sky_data.fetch
 					cache: false
 					dataType: "jsonp"
-			, 15000
+			, 30000
 
 			dark_sky = new Weather.Views.DarkSky
 				collection: dark_sky_data
