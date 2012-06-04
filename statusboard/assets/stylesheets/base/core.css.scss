@@ -11,6 +11,7 @@ body {
   @include helvetica;
   background-color:#222;
   color:#ddd;
+  cursor:default;
   font-size:62.5%;
   position:relative;
 }
@@ -25,12 +26,9 @@ a {
 .app {
   @include block_rel_left;
   @include round(5px);
-  height:50%;
-  margin-left:1%;
+  height:48.5%;
+  margin:1% 0 1% 1%;
   width:31%;
 
   background-color:rgba(255, 255, 255, 0.1);
-}
-.app:nth-child(3n+1) {
-  margin-left:0;
 }
