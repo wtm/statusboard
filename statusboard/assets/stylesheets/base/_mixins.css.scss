@@ -57,19 +57,6 @@
     background-image:url("/assets/" + $name + "@2x." + $type);
   }
 }
-@mixin white_tile {
-  @include retina_sprite("white_tile", "png", 64px, 64px);
-  background-position:0 0;
-}
-@mixin light_grey_tile {
-  @include retina_sprite("light_grey_tile", "png", 25px, 25px);
-  background-position:0 0;
-}
-@mixin base_sprite($x:0px, $y:0px) {
-  @include retina_sprite("sprite", "png", 125px, 125px);
-  background-position:$x $y;
-  background-repeat:no-repeat;
-}
 
 //ROUNDED CORNERS
 @mixin round_top_left($radius:5px) {
