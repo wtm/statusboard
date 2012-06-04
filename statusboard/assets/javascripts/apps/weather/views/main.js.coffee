@@ -9,7 +9,7 @@ jQuery ($) ->
 			clearTimeout Weather.State.dark_sky_autofetch
 
 		render: ->
-			@$el.children().empty().remove
+			@$el.children().empty().remove()
 			$view = @$el
 
 			# Dark Sky
