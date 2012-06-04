@@ -1,1 +1,4 @@
-{{currentTime}}
+%span.hour
+  {{current_hour}}
+%span.minute
+  {{current_minute}}

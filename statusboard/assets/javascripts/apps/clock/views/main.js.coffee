@@ -9,13 +9,12 @@ jQuery ($) ->
 			clearTimeout Clock.State.update_time
 
 		render: ->
-			@$el.children().empty().remove
-			$view = @$el
+			@$el.children().empty().remove()
 
 			time = new Clock.Views.Time
+			@$el.append time.render().el
 
-			Clock.State.update_time = setInterval ->
-				$view.append time.render().el
-			, 1000
+			date = new Clock.Views.Date
+			@$el.append date.render().el
 
 			@

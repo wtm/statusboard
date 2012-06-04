@@ -1,5 +1,61 @@
 @import "base/mixins";
 
 .app.clock {
-  
+  @include block_rel;
+
+  .date {
+    @include block_abs;
+    left:9.5%;
+    right:9.5%;
+    text-align:center;
+    top:125px;
+
+    .day, .month {
+      @include block_abs;
+      color:#2b2b2b;
+      font-size:14px;
+      font-weight:bold;
+      padding:0 6px;
+      text-align:center;
+      width:40%;
+    }
+
+    .month {
+      right:0;
+    }
+  }
+
+  .time {
+    @include block_rel;
+    height:80px;
+    margin-top:15px;
+    text-align:center;
+
+    .hour, .minute {
+      @include round(5px);
+      background-color:#666;
+      color:#222;
+      display:inline-block;
+      font:100px "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight:300;
+      height:70px;
+      line-height:64px;
+      padding:25px 6px 35px 6px;
+      position:relative;
+      text-align:center;
+      width:40%;
+
+      &:after {
+        @include block_abs;
+        border-top:1px solid #2b2b2b;
+        content:" ";
+        left:0;
+        right:0;
+        top:45%;
+      }
+    }
+    .minute {
+      margin-left:2%;
+    }
+  }
 }
