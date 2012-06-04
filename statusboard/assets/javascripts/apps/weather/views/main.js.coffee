@@ -7,6 +7,7 @@ jQuery ($) ->
 			_.bindAll @, "render"
 
 			clearTimeout Weather.State.dark_sky_autofetch
+			clearTimeout Weather.State.wunderground_autofetch
 
 		render: ->
 			@$el.children().empty().remove()
@@ -18,7 +19,7 @@ jQuery ($) ->
 				cache: false
 				dataType: "jsonp"
 
-			# Auto-update every five minutes
+			# 5 minutes
 			Weather.State.dark_sky_autofetch = setInterval ->
 				dark_sky_data.fetch
 					cache: false
@@ -35,6 +36,13 @@ jQuery ($) ->
 			wunderground_data.fetch
 				cache: false
 				dataType: "jsonp"
+
+			# 30 minutes
+			Weather.State.wunderground_autofetch = setInterval ->
+				wunderground_data.fetch
+					cache: false
+					dataType: "jsonp"
+			, 1800000
 
 			wunderground = new Weather.Views.Wunderground
 				collection: wunderground_data
