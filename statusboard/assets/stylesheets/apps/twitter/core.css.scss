@@ -1,8 +1,6 @@
 @import "base/mixins";
 
 .app.twitter {
-  overflow-y:scroll;
-
   .tweet_stream {
     .item {
       @include block_rel;

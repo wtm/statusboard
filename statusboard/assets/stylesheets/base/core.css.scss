@@ -48,6 +48,7 @@ a {
   @include block_rel;
   @include inner_shadow(0, 0, 2px, 0, rgba(0, 0, 0, 0.2));
   @include round(1px);
+  background-repeat:no-repeat;
 }
 .avatar.x30 {
   @include avatar_size(30px);
