@@ -6,47 +6,40 @@ jQuery ($) ->
 		initialize: ->
 			_.bindAll @, "render"
 
-			clearTimeout Weather.State.dark_sky_autofetch
-			clearTimeout Weather.State.wunderground_autofetch
+			clearTimeout Weather.State.autorefresh_darksky
+			clearTimeout Weather.State.autorefresh_wunderground
+
+		fetch_collection: (collection) ->
+			collection.fetch
+				cache: false
+				dataType: "jsonp"
 
 		render: ->
 			@$el.children().empty().remove()
 			$view = @$el
 
+			fetch_collection = @fetch_collection
+
 			# Dark Sky
-			dark_sky_data = Weather.Collections.dark_sky_predictions
-			dark_sky_data.fetch
-				cache: false
-				dataType: "jsonp"
-
-			# 5 minutes
-			Weather.State.dark_sky_autofetch = setInterval ->
-				dark_sky_data.fetch
-					cache: false
-					dataType: "jsonp"
-			, 300000
-
+			darksky_data = Weather.Collections.dark_sky_predictions
 			dark_sky = new Weather.Views.DarkSky
-				collection: dark_sky_data
-
+				collection: darksky_data
 			$view.append dark_sky.render().el
+
+			fetch_collection darksky_data
+			Weather.State.autorefresh_darksky =
+					setInterval (-> fetch_collection darksky_data),
+							Weather.State.darksky_autorefresh_delay
 
 			# Weather Underground
 			wunderground_data = Weather.Collections.wunderground_predictions
-			wunderground_data.fetch
-				cache: false
-				dataType: "jsonp"
-
-			# 30 minutes
-			Weather.State.wunderground_autofetch = setInterval ->
-				wunderground_data.fetch
-					cache: false
-					dataType: "jsonp"
-			, 1800000
-
 			wunderground = new Weather.Views.Wunderground
 				collection: wunderground_data
-
 			$view.append wunderground.render().el
+
+			fetch_collection wunderground_data
+			Weather.State.autorefresh_wunderground =
+					setInterval (-> fetch_collection wunderground_data),
+							Weather.State.wunderground_autorefresh_delay
 
 			@

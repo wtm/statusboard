@@ -6,7 +6,7 @@ jQuery ($) ->
 		initialize: ->
 			_.bindAll @, "render"
 
-			clearTimeout Instagram.State.autofetch
+			clearTimeout Instagram.State.autorefresh
 
 		render: ->
 			@$el.children().empty().remove()

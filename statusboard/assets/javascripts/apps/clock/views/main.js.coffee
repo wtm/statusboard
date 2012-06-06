@@ -6,7 +6,7 @@ jQuery ($) ->
 		initialize: ->
 			_.bindAll @, "render"
 
-			clearTimeout Clock.State.update_time
+			clearTimeout Clock.State.autorefresh
 
 		render: ->
 			@$el.children().empty().remove()

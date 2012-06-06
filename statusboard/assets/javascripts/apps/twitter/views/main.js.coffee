@@ -6,7 +6,7 @@ jQuery ($) ->
 		initialize: ->
 			_.bindAll @, "render"
 
-			clearTimeout Twitter.State.autofetch
+			clearTimeout Twitter.State.autorefresh
 
 		render: ->
 			@$el.children().empty().remove()
