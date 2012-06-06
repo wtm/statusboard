@@ -15,5 +15,4 @@ jQuery ($) ->
 	# `String` in the form of `"latitude,longitude"`.
 	Weather.State.location = "45.518902,-122.664596"
 
-	app = new Statusboard.Models.Application Weather
-	Statusboard.Collections.applications.add app
+	register_application Weather
