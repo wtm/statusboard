@@ -6,7 +6,7 @@ jQuery ($) ->
 		initialize: ->
 			_.bindAll @, "render", "_draw_sparkline"
 
-			@collection.bind "reset", @render
+			@collection.on "reset", @render
 
 		_calculate_min_max: (items) ->
 			_min = []

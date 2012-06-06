@@ -7,7 +7,7 @@ jQuery ($) ->
 		initialize: ->
 			_.bindAll @, "render"
 
-			@collection.bind "reset", @render
+			@collection.on "reset", @render
 
 		render: ->
 			@$el.html @template @model.toJSON()
