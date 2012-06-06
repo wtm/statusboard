@@ -3,19 +3,41 @@
 .app.instagram {
   .photo_stream {
     @include block_rel;
-    margin:5px 15px 15px 5px;
+    height:90%;
+    margin:5%;
+    overflow:hidden;
+    width:90%;
     z-index:2;
 
     .item {
       @include block_rel_left;
-      margin:12px 0 0 12px;
+      height:22%;
+      margin-left:4%;
+      width:22%;
 
-      .image {
-        @include avatar_size(75px);
+      a {
         @include block_rel;
-        @include inner_shadow(0, 0, 1px, 0, rgba(255, 255, 255, 0.4));
-        @include round(2px);
+        height:100%;
+        width:100%;
+
+        .image {
+          @include block_rel;
+          background-repeat:no-repeat;
+          height:100%;
+          width:100%;
+          background-size:contain;
+          -moz-background-size:contain;
+          -webkit-background-size:contain;
+        }
       }
+    }
+    // after the four items (top row)
+    .item:nth-child(n+5) {
+      margin-top:4%;
+    }
+    // no margin first column
+    .item:nth-child(4n+1) {
+      margin-left:0;
     }
   }
 
