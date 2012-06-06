@@ -39,8 +39,8 @@ Current and near-future weather conditions at a given location. Uses
 **Usage:**
 
 1. Get an [API key for Dark Sky][darkskyapi]; `export DARK_SKY_API_KEY=[key]`.
-2. Get an [API key for Weather Underground][wundergroundapi];
-   `export WUNDERGROUND_API_KEY=[key]`.
+2. Get an [API key for Weather Underground][wundergroundapi] (Cumulus developer
+   plan); `export WUNDERGROUND_API_KEY=[key]`.
 
   [darkskyapi]: https://developer.darkskyapp.com/
   [wundergroundapi]: http://www.wunderground.com/weather/api/
