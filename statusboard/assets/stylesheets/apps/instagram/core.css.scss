@@ -2,7 +2,9 @@
 
 .app.instagram {
   .photo_stream {
+    @include block_rel;
     margin:5px 15px 15px 5px;
+    z-index:2;
 
     .item {
       @include block_rel_left;
@@ -15,5 +17,9 @@
         @include round(2px);
       }
     }
+  }
+
+  &:after {
+    z-index:1;
   }
 }

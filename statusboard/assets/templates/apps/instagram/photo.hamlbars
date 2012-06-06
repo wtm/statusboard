@@ -1,1 +1,2 @@
-%span{ :class => "image", :style => "background-image:url({{images.thumbnail.url}});" }
+%a{ :href => "{{link}}", :target => "_blank" }
+  %span{ :class => "image", :style => "background-image:url({{images.thumbnail.url}});" }
