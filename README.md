@@ -10,7 +10,7 @@ A simple [Backbone.js][backbone]-based heads-up board.
 
 Time where you are. Needs localization.
 
-## Instagram
+### Instagram
 
 Pulls recent photos for a given tag.
 
