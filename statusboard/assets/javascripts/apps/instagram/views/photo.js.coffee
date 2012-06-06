@@ -12,6 +12,4 @@ jQuery ($) ->
 		render: ->
 			@$el.html @template @model.toJSON()
 
-			console.log @model.toJSON()
-
 			@
