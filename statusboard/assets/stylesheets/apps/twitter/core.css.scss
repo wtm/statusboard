@@ -3,30 +3,33 @@
 .app.twitter {
   .tweet_stream {
     .item {
-      @include block_rel;
-      font-size:13px;
-      min-height:30px;
-      padding:7px 10px 7px 48px;
-
-      .text, .user {
+      a {
         @include block_rel;
-      }
+        font-size:13px;
+        min-height:30px;
+        padding:7px 10px 7px 48px;
+        z-index:1;
 
-      .text {
-        color:#aaa;
-      }
+        .text, .user {
+          @include block_rel;
+        }
 
-      .avatar {
-        @include block_abs;
-        @include round(3px);
-        left:10px;
-        margin-right:10px;
-        top:8px;
-      }
+        .text {
+          color:#aaa;
+        }
 
-      .user {
-        color:#999;
-        font-style:italic;
+        .avatar {
+          @include block_abs;
+          @include round(3px);
+          left:10px;
+          margin-right:10px;
+          top:8px;
+        }
+
+        .user {
+          color:#999;
+          font-style:italic;
+        }
       }
     }
     .item + .item {
