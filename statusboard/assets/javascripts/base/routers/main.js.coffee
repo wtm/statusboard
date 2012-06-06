@@ -19,6 +19,6 @@ jQuery ($) ->
 			instagram = new Instagram.Views.Main
 			$(document.body).append instagram.render().el
 			# 5 minutes
-			Instagram.State.autofetch = setInterval (-> twitter.render()), 300000
+			Instagram.State.autofetch = setInterval (-> instagram.render()), 300000
 
 	window.StatusboardApp = new Statusboard.Routers.Main()
