@@ -10,6 +10,18 @@ A simple [Backbone.js][backbone]-based heads-up board.
 
 Time where you are. Needs localization.
 
+## Instagram
+
+Pulls recent photos for a given tag.
+
+**Usage:**
+
+Register an [API client][instagram]; `export INSTAGRAM_API_KEY=[client id]`
+
+  [instagram]: http://instagr.am/developer/clients/manage/
+
+**Customization:** Change tag in `javascripts/apps/instagram/boot.js.coffee`
+
 ### Twitter
 
 Displays the most recent tweets from given Twitter list.
