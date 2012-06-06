@@ -1,6 +1,5 @@
 #= require_tree ./helpers
 #= require_tree ./routers
-#= require_tree ../../templates/base
 
 window.Statusboard =
 	Collections: {}
