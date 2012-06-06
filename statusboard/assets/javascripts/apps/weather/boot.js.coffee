@@ -11,6 +11,8 @@ jQuery ($) ->
 	Weather.State.autorefresh_delay = false
 	Weather.State.darksky_autorefresh_delay = minutes_to_ms 5
 	Weather.State.wunderground_autorefresh_delay = minutes_to_ms 30
+
+	# `String` in the form of `"latitude,longitude"`.
 	Weather.State.location = "45.518902,-122.664596"
 
 	app = new Statusboard.Models.Application Weather
