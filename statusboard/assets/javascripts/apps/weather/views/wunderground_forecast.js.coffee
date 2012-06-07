@@ -1,5 +1,5 @@
 jQuery ($) ->
-	class Weather.Views.WundergroundForecast extends Backbone.View
+	class Weather.Views.WundergroundForecast extends Backbone.UnbindingView
 		tagName: "section"
 		className: "item"
 		template: Handlebars.templates["apps/weather/wunderground_forecast"]
@@ -7,7 +7,8 @@ jQuery ($) ->
 		initialize: ->
 			_.bindAll @, "render"
 
-			@collection.on "reset", @render
+			@bindings = Weather.State.bindings
+			@bindTo @collection, "reset", @render
 
 		render: ->
 			@$el.html @template @model.toJSON()

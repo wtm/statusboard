@@ -1,15 +1,18 @@
 jQuery ($) ->
-	class Twitter.Views.Main extends Backbone.View
+	class Twitter.Views.Main extends Backbone.UnbindingView
 		tagName: "section"
 		className: "app twitter"
 
 		initialize: ->
 			_.bindAll @, "render"
 
+			@bindings = []
+			@child_views = []
+
 			clearTimeout Twitter.State.autorefresh
 
 		render: ->
-			@$el.children().empty().remove()
+			@cleanUp()
 
 			collection = Twitter.Collections.tweets
 			collection.fetch
@@ -18,7 +21,7 @@ jQuery ($) ->
 
 			tweet_stream = new Twitter.Views.TweetStream
 				collection: collection
-
 			@$el.append tweet_stream.render().el
+			@child_views.push tweet_stream
 
 			@

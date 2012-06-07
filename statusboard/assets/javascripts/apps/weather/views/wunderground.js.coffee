@@ -1,15 +1,18 @@
 jQuery ($) ->
-	class Weather.Views.Wunderground extends Backbone.View
+	class Weather.Views.Wunderground extends Backbone.UnbindingView
 		tagName: "section"
 		id: "wunderground"
 
 		initialize: ->
 			_.bindAll @, "render"
 
-			@collection.on "reset", @render
+			@bindings = Weather.State.bindings
+			@bindTo @collection, "reset", @render
+			@child_views = []
 
 		render: ->
 			collection = @collection
+			child_views = @child_views
 
 			@$el.children().empty().remove()
 			$view = @$el
@@ -20,5 +23,6 @@ jQuery ($) ->
 					model: item
 
 				$view.append forecast.render().el
+				child_views.push forecast
 
 			@

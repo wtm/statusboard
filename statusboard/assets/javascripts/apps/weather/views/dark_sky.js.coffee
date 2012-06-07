@@ -1,12 +1,14 @@
 jQuery ($) ->
-	class Weather.Views.DarkSky extends Backbone.View
+	class Weather.Views.DarkSky extends Backbone.UnbindingView
 		tagName: "section"
 		id: "dark_sky"
 
 		initialize: ->
 			_.bindAll @, "render", "_draw_sparkline"
 
-			@collection.on "reset", @render
+			@bindings = Weather.State.bindings
+			@bindTo @collection, "reset", @render
+			@child_views = []
 
 		_calculate_min_max: (items) ->
 			_min = []
@@ -44,6 +46,7 @@ jQuery ($) ->
 
 		render: ->
 			collection = @collection
+			child_views = @child_views
 
 			@$el.children().empty().remove()
 			$view = @$el
@@ -56,6 +59,7 @@ jQuery ($) ->
 					model: item
 
 				$view.append forecast.render().el
+				child_views.push forecast
 
 				# Trying to render the sparkline in `Weather.Views.dark_sky_forecast`
 				# fails because the view hasn't been inserted yet.

@@ -1,5 +1,5 @@
 jQuery ($) ->
-	class Twitter.Views.Tweet extends Backbone.View
+	class Twitter.Views.Tweet extends Backbone.UnbindingView
 		tagName: "section"
 		className: "item"
 		template: Handlebars.templates["apps/twitter/tweet"]
@@ -7,7 +7,8 @@ jQuery ($) ->
 		initialize: ->
 			_.bindAll @, "render"
 
-			@collection.on "reset", @render
+			@bindings = Twitter.State.bindings
+			@bindTo @collection, "reset", @render
 
 		render: ->
 			@$el.html @template @model.toJSON()

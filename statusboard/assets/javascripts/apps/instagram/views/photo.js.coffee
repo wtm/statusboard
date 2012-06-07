@@ -1,5 +1,5 @@
 jQuery ($) ->
-	class Instagram.Views.Photo extends Backbone.View
+	class Instagram.Views.Photo extends Backbone.UnbindingView
 		tagName: "section"
 		className: "item"
 		template: Handlebars.templates["apps/instagram/photo"]
@@ -7,7 +7,8 @@ jQuery ($) ->
 		initialize: ->
 			_.bindAll @, "render"
 
-			@collection.on "reset", @render
+			@bindings = Instagram.State.bindings
+			@bindTo @collection, "reset", @render
 
 		render: ->
 			@$el.html @template @model.toJSON()
