@@ -83,7 +83,7 @@ Backbone.UnbindingView = Backbone.View.extend({
 			this._clean_up_child_views();
 		}
 
-		this.$el.children().empty().remove()
+		this.$el.children().empty().remove();
 
 		// Clean up listeners created via `bindTo`.
 		_.each(this.bindings, function (binding) {
