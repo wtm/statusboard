@@ -19,9 +19,9 @@ Zepto ($) ->
 			Statusboard.Collections.applications.each (item) ->
 				app = item.toJSON()
 
-				app.State.autorefresh = setInterval ->
-					_fetch(app.Collections.items)
-				, app.State.autorefresh_delay
+				# app.State.autorefresh = setInterval ->
+				# 	_fetch(app.Collections.items)
+				# , app.State.autorefresh_delay
 
 		render: ->
 			@$el.html @template {}

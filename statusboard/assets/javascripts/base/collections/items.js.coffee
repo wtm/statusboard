@@ -1,11 +1,13 @@
 Zepto ($) ->
 	class Statusboard.Collections.Items extends Backbone.Collection
 		comparator: (model) ->
-			switch model.get "statusboard_type"
+			timestamp = switch model.get "statusboard_type"
+				when "foursquare"
+					parseInt(model.get("createdAt"), 10) * 1000
 				when "instagram"
-					timestamp = parseInt(model.get("created_time"), 10) * 1000
+					parseInt(model.get("created_time"), 10) * 1000
 				when "twitter"
-					timestamp = model.get "created_at"
+					model.get "created_at"
 
 			new Date(timestamp).getTime()
 

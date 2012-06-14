@@ -3,7 +3,7 @@ Zepto ($) ->
 	# 24 seconds. 3 minutes gives a buffer of 30 requests.
 	#
 	# See: https://dev.twitter.com/docs/rate-limiting
-	Twitter.State.autorefresh_delay = seconds_to_ms 30
+	Twitter.State.autorefresh_delay = seconds_to_ms 10
 
 	Twitter.State.term = "%23wtmisfive"
 

@@ -9,6 +9,8 @@ group :statusboard_app do
 	gem "sinatra-synchrony", :require => "sinatra/synchrony"
 	gem "sinatra-static-assets", :require => "sinatra/static_assets"
 
+	gem "foursquare2"
+
 	# content types
 	gem "sprockets"
 	gem "coffee-script"

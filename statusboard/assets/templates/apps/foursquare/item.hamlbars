@@ -1,0 +1,10 @@
+{{#if shout}}
+%span.text
+  {{highlight_hashtag shout}}
+{{/if}}
+
+%section.meta
+  %span{ :class => "avatar x30", :style => "background-image:url({{user.photo}});" }
+
+  %span.user
+    {{user.firstName}} {{user.lastName}}
