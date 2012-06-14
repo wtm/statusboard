@@ -2,6 +2,7 @@ jQuery ($) ->
 	class Statusboard.Views.Main extends Backbone.UnbindingView
 		tagName: "section"
 		id: "wrapper"
+		template: Handlebars.templates["base/stream"]
 
 		initialize: ->
 			_.bindAll @, "render"
@@ -11,9 +12,9 @@ jQuery ($) ->
 			@child_views = []
 
 		render: ->
-			child_views = @child_views
+			@$el.html @template {}
 
-			@$el.children().empty().remove()
+			child_views = @child_views
 
 			$view = @$el
 
@@ -21,11 +22,11 @@ jQuery ($) ->
 				app = item.toJSON()
 
 				app_view = new app.Views.Main
-				$view.append app_view.render().el
+				app_view.render()
 				child_views.push app_view
 
-				if app.State.autorefresh_delay
-					app.State.autorefresh = setInterval app_view.render,
-							app.State.autorefresh_delay
+				# if app.State.autorefresh_delay
+				# 	app.State.autorefresh = setInterval app_view.render,
+				# 			app.State.autorefresh_delay
 
 			@

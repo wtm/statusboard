@@ -1,7 +1,7 @@
 jQuery ($) ->
 	class Instagram.Views.Photo extends Backbone.UnbindingView
 		tagName: "section"
-		className: "item"
+		className: "item photo"
 		template: Handlebars.templates["apps/instagram/photo"]
 
 		initialize: ->

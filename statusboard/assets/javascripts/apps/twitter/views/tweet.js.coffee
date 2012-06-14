@@ -1,7 +1,7 @@
 jQuery ($) ->
 	class Twitter.Views.Tweet extends Backbone.UnbindingView
 		tagName: "section"
-		className: "item"
+		className: "item tweet"
 		template: Handlebars.templates["apps/twitter/tweet"]
 
 		initialize: ->

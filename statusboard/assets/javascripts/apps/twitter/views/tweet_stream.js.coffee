@@ -1,5 +1,5 @@
 jQuery ($) ->
-	class Instagram.Views.PhotoStream extends Backbone.UnbindingView
+	class Twitter.Views.TweetStream extends Backbone.UnbindingView
 		initialize: ->
 			_.bindAll @, "render"
 
@@ -14,11 +14,11 @@ jQuery ($) ->
 			$view = $("#stream")
 
 			collection.each (item) ->
-				photo = new Instagram.Views.Photo
+				tweet = new Twitter.Views.Tweet
 					collection: collection
 					model: item
 
-				$view.append photo.render().el
-				child_views.push photo
+				$view.append tweet.render().el
+				child_views.push tweet
 
 			@

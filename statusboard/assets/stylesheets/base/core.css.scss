@@ -8,13 +8,14 @@ html, body {
   height:100%;
 }
 body {
-  @include helvetica;
-  @include retina_sprite("base/grey_tile", "png", 50px, 50px);
-  background-color:#222;
-  color:#ddd;
+  @include proximaNova;
+  @include retina_sprite("base/background_tile", "jpg", 380px, 380px);
+  background-color:#52565e;
+  color:#949aa3;
   cursor:default;
-  font-size:62.5%;
-  position:relative;
+  font-size:14px;
+  margin:0;
+  padding:0;
 }
 a {
   text-decoration:none;
@@ -27,33 +28,98 @@ a {
 #wrapper {
   height:100%;
 
-  .app {
-    @include block_rel_left;
-    @include round(5px);
-    background-color:#2b2b2b;
-    height:98%;
-    margin:1% 0 0 1%;
-    overflow:hidden;
-    width:48.5%;
-  }
-  .app:after {
-    @include block_abs;
-    @include inner_shadow(0, 0, 10px, 0, rgba(0, 0, 0, 0.7));
-    @include round(5px);
-    bottom:0;
-    content:" ";
-    left:0;
-    right:0;
-    top:0;
-  }
-}
+  #sidebar {
+    @include shadow(2px, 0, 3px, 0, rgba(0, 0, 0, 0.2));
+    background-color:#fff;
+    border-right:3px solid #e5e5e5;
+    float:left;
+    height:100%;
+    min-height:750px;
+    padding:0px 30px;
+    position:fixed;
+    width:276px;
+    z-index:5;
 
-.avatar {
-  @include block_rel;
-  @include inner_shadow(0, 0, 2px, 0, rgba(0, 0, 0, 0.2));
-  @include round(1px);
-  background-repeat:no-repeat;
-}
-.avatar.x30 {
-  @include avatar_size(30px);
+    #logo {
+      @include block_abs;
+      @include base_sprite;
+      height:90px;
+      left:0;
+      top:0;
+      width:140px;
+    }
+
+    .name {
+      @include museeBold;
+      color:#4b3b73;
+      cursor:default;
+      font-size:39px;
+      font-weight:300;
+      letter-spacing:1px;
+      line-height:41px;
+      margin:110px 0 15px 0;
+      text-transform:uppercase;
+    }
+
+    .note {
+      color:#7c7f83;
+      cursor:default;
+      line-height:22px;
+      font-weight:400;
+      margin:0 0 30px 0;
+
+      .hashtag {
+        color:#4b3b73;
+      }
+    }
+  }
+
+  #stream {
+    background:url("/assets/main_bg.png") top center no-repeat;
+    margin-left:339px;
+
+    .item {
+      @include block_rel_left;
+      height:384px;
+      overflow:hidden;
+      width:384px;
+
+      .meta {
+        @include block_abs;
+        @include vertical_gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
+        bottom:0;
+        content:" ";
+        height:80px;
+        width:100%;
+
+        .avatar, .user {
+          @include block_abs;
+          bottom:10px;
+          z-index:5;
+        }
+
+        .avatar {
+          @include inner_shadow(0, 0, 2px, 0, rgba(0, 0, 0, 0.2));
+          @include block_abs;
+          @include round(3px);
+          background-repeat:no-repeat;
+          left:10px;
+          margin-right:10px;
+        }
+
+        .avatar.x30 {
+          @include avatar_size(30px);
+        }
+
+        .user {
+          color:#aaa;
+          font-size:16pt;
+          font-weight:300;
+          left:50px;
+          line-height:27px;
+          width:324px;
+        }
+      }
+    }
+  }
 }

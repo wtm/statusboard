@@ -1,47 +1,13 @@
 @import "base/mixins";
 
-.app.instagram {
-  .photo_stream {
+.item.photo {
+  .image {
     @include block_rel;
-    height:90%;
-    margin:5%;
-    overflow:hidden;
-    width:90%;
-    z-index:2;
-
-    .item {
-      @include block_rel_left;
-      height:22%;
-      margin-left:4%;
-      width:22%;
-
-      a {
-        @include block_rel;
-        height:100%;
-        width:100%;
-
-        .image {
-          @include block_rel;
-          background-repeat:no-repeat;
-          height:100%;
-          width:100%;
-          background-size:contain;
-          -moz-background-size:contain;
-          -webkit-background-size:contain;
-        }
-      }
-    }
-    // after the four items (top row)
-    .item:nth-child(n+5) {
-      margin-top:4%;
-    }
-    // no margin first column
-    .item:nth-child(4n+1) {
-      margin-left:0;
-    }
-  }
-
-  &:after {
-    z-index:1;
+    background-repeat:no-repeat;
+    height:100%;
+    width:100%;
+    background-size:contain;
+    -moz-background-size:contain;
+    -webkit-background-size:contain;
   }
 }

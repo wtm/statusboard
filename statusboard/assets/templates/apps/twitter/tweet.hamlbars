@@ -1,21 +1,8 @@
-{{#if user}}
-%a{ :href => "//twitter.com/{{user.screen_name}}/status/{{id_str}}", :target => "_blank" }
-  %span{ :class => "avatar x30", :style => "background-image:url({{user.profile_image_url}});" }
+%span.text
+  {{highlight_hashtags text}}
 
-  %span.text
-    {{highlight_hashtags text}}
-
-  %span.user
-    — {{user.name}}
-{{else}}
-%a{ :href => "//twitter.com/{{from_user}}/status/{{id_str}}", :target => "_blank" }
+%section.meta
   %span{ :class => "avatar x30", :style => "background-image:url({{profile_image_url}});" }
 
-  %span.text
-    {{highlight_hashtags text}}
-
   %span.user
-    — {{from_user_name}}
-{{/if}}
-
-.clear
+    {{from_user_name}}

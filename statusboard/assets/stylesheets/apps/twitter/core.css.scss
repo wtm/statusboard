@@ -1,45 +1,24 @@
 @import "base/mixins";
 
-.app.twitter {
-  .tweet_stream {
-    .item {
-      a {
+#wrapper {
+  #stream {
+    .item.tweet {
+      .text {
         @include block_rel;
-        font-size:13px;
-        min-height:30px;
-        padding:7px 10px 7px 48px;
-        z-index:1;
+        color:#aaa;
+        font-size:20pt;
+        font-weight:300;
+        padding:10px 15px;
 
-        .text, .user {
-          @include block_rel;
-        }
-
-        .text {
-          color:#aaa;
-
-          em {
-            color:#8378cc;
-            font-style:normal;
-          }
-        }
-
-        .avatar {
-          @include block_abs;
-          @include round(3px);
-          left:10px;
-          margin-right:10px;
-          top:8px;
-        }
-
-        .user {
-          color:#999;
-          font-style:italic;
+        em {
+          color:#8378cc;
+          font-style:normal;
         }
       }
-    }
-    .item + .item {
-      @include inner_shadow(0, 1px, 0, 0, rgba(255, 255, 255, 0.1));
-      border-top:1px solid rgba(0, 0, 0, 0.2);
+
+      .meta {
+        @include vertical_gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+      }
     }
   }
 }

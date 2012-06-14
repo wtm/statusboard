@@ -57,6 +57,10 @@
     background-image:url("/assets/" + $name + "@2x." + $type);
   }
 }
+@mixin base_sprite {
+  @include retina_sprite("base/global_sprite", "png", 200, 190);
+  @include replace;
+}
 
 //ROUNDED CORNERS
 @mixin round_top_left($radius:5px) {
@@ -143,8 +147,12 @@
   @include helvetica;
   font-family:"Helvetica Neue", "Helvetica", Arial, sans-serif;
 }
-
-@mixin proximaNova {font-family: "Proxima Nova", "Helvetica", "Arial", sans-serif !important;}
+@mixin proximaNova {
+  font-family:"Proxima Nova", "Helvetica", "Arial", sans-serif;
+}
+@mixin museeBold {
+  font-family:MuseeBold, Georgia, serif;
+}
 
 //BOX SHADOWS
 @mixin no_shadow {
