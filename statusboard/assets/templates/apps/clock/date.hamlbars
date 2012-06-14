@@ -1,5 +1,0 @@
-%span.day
-  {{current_day_name}}
-%span.month
-  {{current_month}}
-  {{current_day}}

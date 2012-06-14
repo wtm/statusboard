@@ -1,5 +1,0 @@
-.current_temp
-  {{currentTemp}}°
-.current_status
-  {{currentSummary}}
-.forecast.next_hour
