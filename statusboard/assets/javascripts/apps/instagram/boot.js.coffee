@@ -4,7 +4,7 @@ Zepto ($) ->
 	# statusboard open simultaneously.
 	#
 	# See: http://instagr.am/developer/endpoints/#limits
-	Instagram.State.autorefresh_delay = seconds_to_ms 2
+	Instagram.State.autorefresh_delay = seconds_to_ms 10
 
 	Instagram.State.tag_name = "wtmisfive"
 
