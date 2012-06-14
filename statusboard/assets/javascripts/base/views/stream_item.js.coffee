@@ -13,6 +13,4 @@ Zepto ($) ->
 
 			@$el.html template @model.toJSON()
 
-			console.log @model.get("statusboard_type"), @model.toJSON()
-
 			@

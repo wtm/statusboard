@@ -7,6 +7,5 @@ Zepto ($) ->
 	Facebook.State.autorefresh_delay = seconds_to_ms 2
 
 	Facebook.State.tag_name = "wtmisfive"
-	console.log "BOB"
 
 	# register_application Facebook
