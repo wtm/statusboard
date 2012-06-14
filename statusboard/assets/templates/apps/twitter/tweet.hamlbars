@@ -1,4 +1,8 @@
+{{#if user}}
 %a{ :href => "//twitter.com/{{user.screen_name}}/status/{{id_str}}", :target => "_blank" }
+{{else}}
+%a{ :href => "//twitter.com/{{from_user}}/status/{{id_str}}", :target => "_blank" }
+{{/if}}
   {{#if user}}
   %span{ :class => "avatar x30", :style => "background-image:url({{user.profile_image_url}});" }
   {{else}}
