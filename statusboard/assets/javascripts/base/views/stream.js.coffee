@@ -12,6 +12,8 @@ Zepto ($) ->
 		render: ->
 			child_views = @child_views
 
+			@$el.children().empty().remove()
+
 			$view = @$el
 			@collection.each (item) ->
 				stream_item = new Statusboard.Views.StreamItem

@@ -1,6 +1,4 @@
 Handlebars?.registerHelper "twitter_photo", (items, options) ->
-	console.log "photos", items
-
 	unless items.length is 0
 		photo = _.first items
 

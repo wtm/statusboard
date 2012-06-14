@@ -15,6 +15,8 @@ Zepto ($) ->
 
 			items
 
-		add: (models, options) -> @parent().add.call @, models, options
+		add: (models, options) ->
+			models = [models] unless _.isArray(models)
+			@parent().add.call @, models, options
 
 	Twitter.Collections.items = new Twitter.Collections.Items()

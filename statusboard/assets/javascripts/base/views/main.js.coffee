@@ -23,7 +23,6 @@ Zepto ($) ->
 					_fetch(app.Collections.items)
 				, app.State.autorefresh_delay
 
-
 		render: ->
 			@$el.html @template {}
 
