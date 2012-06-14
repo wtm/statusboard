@@ -31,10 +31,10 @@ a {
     @include block_rel_left;
     @include round(5px);
     background-color:#2b2b2b;
-    height:48%;
+    height:98%;
     margin:1% 0 0 1%;
     overflow:hidden;
-    width:32%;
+    width:48.5%;
   }
   .app:after {
     @include block_abs;

@@ -6,6 +6,6 @@ jQuery ($) ->
 	# See: http://instagr.am/developer/endpoints/#limits
 	Instagram.State.autorefresh_delay = seconds_to_ms 10
 
-	Instagram.State.tag_name = "wtm"
+	Instagram.State.tag_name = "wtmisfive"
 
 	register_application Instagram

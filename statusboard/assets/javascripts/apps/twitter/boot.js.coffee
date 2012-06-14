@@ -5,7 +5,6 @@ jQuery ($) ->
 	# See: https://dev.twitter.com/docs/rate-limiting
 	Twitter.State.autorefresh_delay = minutes_to_ms 5
 
-	# @opallabs/team
-	Twitter.State.list_id = 54315769
+	Twitter.State.term = "%23wtmisfive"
 
 	register_application Twitter

@@ -1,5 +1,6 @@
 #= require ./boot
 #= require_tree ./models
+#= require_tree ./helpers
 #= require_tree ./collections
 #= require_tree ./views
 #= require_tree ../../../templates/apps/twitter

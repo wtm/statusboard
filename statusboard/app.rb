@@ -4,8 +4,7 @@ class StatusboardApp < Sinatra::Base
 
 	# http://stackoverflow.com/a/4525933/672403
 	configure do
-		set :apps, ["base", "apps/clock", "apps/instagram", "apps/twitter",
-				"apps/weather"]
+		set :apps, ["base", "apps/instagram", "apps/twitter"]
 
 		%w(dark_sky_api_key instagram_api_key wunderground_api_key).each do |setting|
 			set setting.to_sym, (ENV[setting.upcase] || "")
