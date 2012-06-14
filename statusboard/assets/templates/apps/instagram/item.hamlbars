@@ -1,7 +1,10 @@
+%span.text
+  {{highlight_hashtag caption.text}}
+
 %span{ :class => "image", :style => "background-image:url({{images.standard_resolution.url}});" }
 
 %section.meta
   %span{ :class => "avatar x30", :style => "background-image:url({{caption.from.profile_picture}});" }
 
   %span.user
-    {{caption.from.full_name}}
+    @{{caption.from.username}}

@@ -2,20 +2,8 @@
 
 #wrapper {
   #stream {
-    .item.tweet {
-      .text {
-        @include block_rel;
-        color:#aaa;
-        font-size:20pt;
-        font-weight:300;
-        padding:10px 15px;
-
-        em {
-          color:#8378cc;
-          font-style:normal;
-        }
-      }
-
+    .item.twitter {
+      // Lighten gradient for linen background.
       .meta {
         @include vertical_gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
       }

@@ -1,5 +1,9 @@
 %span.text
-  {{highlight_hashtags text}}
+  {{highlight_hashtag text}}
+
+{{#if entities.media}}
+{{twitter_photo entities.media}}
+{{/if}}
 
 %section.meta
   %span{ :class => "avatar x30", :style => "background-image:url({{profile_image_url}});" }

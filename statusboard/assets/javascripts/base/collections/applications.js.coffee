@@ -1,4 +1,4 @@
-jQuery ($) ->
+Zepto ($) ->
 	class Statusboard.Collections.Applications extends Backbone.Collection
 		model: Statusboard.Collections.Application
 

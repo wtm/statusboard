@@ -1,13 +1,1 @@
 @import "base/mixins";
-
-.item.photo {
-  .image {
-    @include block_rel;
-    background-repeat:no-repeat;
-    height:100%;
-    width:100%;
-    background-size:contain;
-    -moz-background-size:contain;
-    -webkit-background-size:contain;
-  }
-}

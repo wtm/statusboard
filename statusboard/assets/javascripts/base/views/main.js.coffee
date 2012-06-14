@@ -1,8 +1,8 @@
-jQuery ($) ->
+Zepto ($) ->
 	class Statusboard.Views.Main extends Backbone.UnbindingView
 		tagName: "section"
 		id: "wrapper"
-		template: Handlebars.templates["base/stream"]
+		template: Handlebars.templates["base/layout"]
 
 		initialize: ->
 			_.bindAll @, "render"
@@ -11,22 +11,25 @@ jQuery ($) ->
 			@bindTo @collection, "reset", @render
 			@child_views = []
 
+			_fetch = (collection) ->
+				collection.fetch
+					add: true
+					dataType: "jsonp"
+
+			Statusboard.Collections.applications.each (item) ->
+				app = item.toJSON()
+
+				app.State.autorefresh = setInterval ->
+					_fetch(app.Collections.items)
+				, app.State.autorefresh_delay
+
+
 		render: ->
 			@$el.html @template {}
 
-			child_views = @child_views
-
-			$view = @$el
-
-			@collection.each (item) ->
-				app = item.toJSON()
-
-				app_view = new app.Views.Main
-				app_view.render()
-				child_views.push app_view
-
-				# if app.State.autorefresh_delay
-				# 	app.State.autorefresh = setInterval app_view.render,
-				# 			app.State.autorefresh_delay
+			stream = new Statusboard.Views.Stream
+				collection: @collection
+			@$el.append stream.render().el
+			@child_views.push stream
 
 			@

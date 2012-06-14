@@ -26,6 +26,7 @@ a {
 }
 
 #wrapper {
+  background:url("/assets/base/main_bg.png") top center no-repeat;
   height:100%;
 
   #sidebar {
@@ -37,7 +38,7 @@ a {
     min-height:750px;
     padding:0px 30px;
     position:fixed;
-    width:276px;
+    width:277px;
     z-index:5;
 
     #logo {
@@ -49,9 +50,9 @@ a {
       width:140px;
     }
 
-    .name {
+    .headline {
       @include museeBold;
-      color:#4b3b73;
+      color:#949aa3;
       cursor:default;
       font-size:39px;
       font-weight:300;
@@ -59,30 +60,76 @@ a {
       line-height:41px;
       margin:110px 0 15px 0;
       text-transform:uppercase;
-    }
 
-    .note {
-      color:#7c7f83;
-      cursor:default;
-      line-height:22px;
-      font-weight:400;
-      margin:0 0 30px 0;
-
-      .hashtag {
+      .name {
         color:#4b3b73;
+        display:block;
       }
     }
   }
 
+  #header, .line, #stream {
+    margin-left:340px;
+  }
+
+  #header {
+    color:#eee;
+    cursor:default;
+    font-size:18px;
+    font-weight:500;
+    letter-spacing:1px;
+    padding:27px 30px;
+    text-align:center;
+    text-shadow:0 -1px 1px #000;
+
+    .hashtag {
+      color:#8378cc;
+    }
+  }
+
+  .line {
+    background:rgba(0,0,0,0.1);
+    border-bottom:1px solid rgba(255, 255, 255, 0.1);
+    height:1px;
+    width:100%;
+  }
+
   #stream {
-    background:url("/assets/main_bg.png") top center no-repeat;
-    margin-left:339px;
+    margin-top:20px;
 
     .item {
       @include block_rel_left;
-      height:384px;
+      height:375px;
+      padding:10px 15px;
       overflow:hidden;
-      width:384px;
+      width:365px;
+
+      .image {
+        @include block_abs;
+        background-repeat:no-repeat;
+        height:100%;
+        left:0;
+        top:0;
+        width:100%;
+        background-size:contain;
+        -moz-background-size:contain;
+        -webkit-background-size:contain;
+        z-index:1;
+      }
+
+      .text {
+        background-color:rgba(0, 0, 0, 0.6);
+        color:#eee;
+        font-size:24px;
+        font-weight:300;
+        line-height:32px;
+        position:relative;
+        z-index:2;
+
+        .hashtag {
+          color:#9e94e0;
+        }
+      }
 
       .meta {
         @include block_abs;
@@ -90,7 +137,9 @@ a {
         bottom:0;
         content:" ";
         height:80px;
+        left:0;
         width:100%;
+        z-index:3;
 
         .avatar, .user {
           @include block_abs;
