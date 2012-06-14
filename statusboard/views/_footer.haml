@@ -1,4 +1,5 @@
 %script{ :src => "//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" }
+%script{ :src => "//use.typekit.com/bsf4nfz.js" }
 
 -# Backbone
 = javascript_script_tag "assets/underscore-min.js"
@@ -24,3 +25,4 @@
 :javascript
   // TODO Find a better way.
   Instagram.State.api_key = "#{settings.instagram_api_key}";
+  try {Typekit.load();} catch (e) {}

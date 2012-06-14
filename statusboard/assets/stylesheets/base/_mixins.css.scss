@@ -144,6 +144,8 @@
   font-family:"Helvetica Neue", "Helvetica", Arial, sans-serif;
 }
 
+@mixin proximaNova {font-family: "Proxima Nova", "Helvetica", "Arial", sans-serif !important;}
+
 //BOX SHADOWS
 @mixin no_shadow {
   box-shadow:none;
