@@ -6,7 +6,7 @@ class StatusboardApp < Sinatra::Base
 	configure do
 		set :apps, ["base", "apps/instagram", "apps/twitter"]
 
-		%w(dark_sky_api_key instagram_api_key wunderground_api_key).each do |setting|
+		%w(instagram_api_key).each do |setting|
 			set setting.to_sym, (ENV[setting.upcase] || "")
 		end
 	end
