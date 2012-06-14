@@ -81,7 +81,7 @@ a {
     text-shadow:0 -1px 1px #000;
 
     .hashtag {
-      color:#8378cc;
+      color:#b196dd;
     }
   }
 
@@ -104,7 +104,7 @@ a {
 
       .image {
         @include block_abs;
-        @include inner_shadow(0, 0, 1px, 0, rgba(255, 255, 255, 0.7));
+        @include inner_shadow(1px, 1px, 0, 0, rgba(255, 255, 255, 0.2));
         background-repeat:no-repeat;
         height:100%;
         left:0;
@@ -126,7 +126,7 @@ a {
         z-index:2;
 
         .hashtag {
-          color:#958dce;
+          color:#b196dd;
         }
       }
 
