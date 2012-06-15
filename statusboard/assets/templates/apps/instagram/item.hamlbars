@@ -8,3 +8,5 @@
 
   %span.user
     @{{caption.from.username}}
+
+%span.service

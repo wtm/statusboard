@@ -10,3 +10,5 @@
 
   %span.user
     {{from_user_name}}
+
+%span.service

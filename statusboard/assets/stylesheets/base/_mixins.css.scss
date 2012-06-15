@@ -61,6 +61,10 @@
   @include retina_sprite("base/global_sprite", "png", 200, 190);
   @include replace;
 }
+@mixin services_sprite {
+  @include retina_sprite("base/services_sprite", "png", 100, 24);
+  @include replace;
+}
 
 //ROUNDED CORNERS
 @mixin round_top_left($radius:5px) {

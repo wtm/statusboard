@@ -1,12 +1,7 @@
 @import "base/mixins";
 
-#wrapper {
-  #stream {
-    .item.twitter {
-      // Lighten gradient for linen background.
-      .meta {
-        @include vertical_gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
-      }
-    }
+.item.twitter {
+  .service {
+    background-position:-25px 0;
   }
 }

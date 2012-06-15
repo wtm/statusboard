@@ -168,6 +168,16 @@ a {
           width:324px;
         }
       }
+
+      .service {
+        @include block_abs;
+        @include services_sprite;
+        bottom:10px;
+        height:24px;
+        right:10px;
+        width:24px;
+        z-index:10;
+      }
     }
   }
 }

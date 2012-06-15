@@ -12,3 +12,5 @@
 
   %span.user
     {{user.firstName}} {{user.lastName}}
+
+%span.service
