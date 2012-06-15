@@ -3,7 +3,11 @@ Zepto ($) ->
 	# 24 seconds. 3 minutes gives a buffer of 30 requests.
 	#
 	# See: https://dev.twitter.com/docs/rate-limiting
-	Twitter.State.autorefresh_delay = seconds_to_ms 10
+	if window.location.host is "wtmisfive-stream.herokuapp.com" or "localhost:9001"
+		delay = seconds_to_ms 10
+	else
+		delay = seconds_to_ms 45
+	Twitter.State.autorefresh_delay = delay
 
 	Twitter.State.term = "%23wtmisfive"
 
