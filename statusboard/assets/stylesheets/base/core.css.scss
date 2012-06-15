@@ -38,6 +38,10 @@ a {
     width:140px;
   }
 
+  .hashtag {
+    color:#b196dd;
+  }
+
   #header {
     color:#eee;
     cursor:default;
@@ -62,10 +66,6 @@ a {
       .name {
         color:#4b3b73;
       }
-    }
-
-    .hashtag {
-      color:#b196dd;
     }
   }
 
@@ -108,10 +108,6 @@ a {
         line-height:32px;
         position:relative;
         z-index:2;
-
-        .hashtag {
-          color:#b196dd;
-        }
       }
 
       .meta {
@@ -149,7 +145,7 @@ a {
           font-weight:300;
           left:50px;
           line-height:27px;
-          width:324px;
+          width:282px;
         }
       }
 
