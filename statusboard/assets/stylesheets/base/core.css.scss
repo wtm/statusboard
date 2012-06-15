@@ -37,7 +37,6 @@ a {
   }
 
   #header {
-    color:#eee;
     cursor:default;
     font-size:18px;
     font-weight:500;
@@ -48,7 +47,7 @@ a {
 
     .headline {
       @include museeBold;
-      color:#b196dd;
+      color:#fff;
       cursor:default;
       font-size:39px;
       font-weight:300;
