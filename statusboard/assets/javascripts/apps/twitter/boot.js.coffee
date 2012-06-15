@@ -4,8 +4,12 @@ Zepto ($) ->
 	#
 	# See: https://dev.twitter.com/docs/rate-limiting
 	if window.location.host is "wtmisfive-stream.herokuapp.com" or "localhost:9001"
+		console.log "yay", window.location.host
+
 		delay = seconds_to_ms 10
 	else
+		console.log "boo", window.location.host
+
 		delay = seconds_to_ms 45
 	Twitter.State.autorefresh_delay = delay
 
