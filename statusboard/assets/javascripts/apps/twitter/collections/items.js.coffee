@@ -13,6 +13,13 @@ Zepto ($) ->
 			for item in items
 				item.statusboard_type = "twitter"
 
+				# Add fake media entity for @WTMPhotoBooth tweets.
+				if item.from_user is 'WTMPhotoBooth'
+					if url = item.entities?.urls?[0]?.expanded_url
+						item.entities.media or= []
+						item.entities.media.unshift
+							media_url: url
+
 			items
 
 		add: (models, options) ->
