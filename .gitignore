@@ -2,6 +2,7 @@
 
 # Bundler
 .bundle/
+vendor/bundle/
 vendor/gems/
 
 # Asset exhaust
