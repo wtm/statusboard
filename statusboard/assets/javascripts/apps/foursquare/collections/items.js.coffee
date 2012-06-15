@@ -12,15 +12,23 @@ Zepto ($) ->
 			d = "0#{m}" if d < 10
 			api_v = "#{y}#{m}#{d}"
 
-			"https://api.foursquare.com/v2/venues/4aa7fa57f964a5206b4e20e3/herenow?oauth_token=#{Foursquare.State.api_key}&v=#{api_v}"
+			"https://api.foursquare.com/v2/venues/#{Foursquare.State.venue_id}/herenow?oauth_token=#{Foursquare.State.api_key}&v=#{api_v}"
 		parse: (data) ->
+			_items = @
+
 			checkins = data.response.hereNow.items
 			for checkin in checkins
-				console.log "!", checkin
-				# fetch
-				checkin.photo = 
+				_checkin = new Foursquare.Models.Checkin
+					id: checkin.id
 
-				item.statusboard_type = "foursquare"
+				_checkin.fetch
+					success: (response) ->
+						data = response.toJSON()
+
+						_real_checkin = _items.get checkin.id
+						_real_checkin.set "photo_url", (data.response?.checkin?.photos?.items?[0].url or "")
+
+				checkin.statusboard_type = "foursquare"
 
 			checkins
 

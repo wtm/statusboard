@@ -1,5 +1,6 @@
 #= require ./boot
 #= require_tree ./collections
+#= require_tree ./models
 #= require_tree ../../../templates/apps/foursquare
 
 window.Foursquare =

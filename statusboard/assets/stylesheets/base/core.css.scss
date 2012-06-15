@@ -110,9 +110,9 @@ a {
         left:0;
         top:0;
         width:100%;
-        background-size:contain;
-        -moz-background-size:contain;
-        -webkit-background-size:contain;
+        background-size:cover;
+        -moz-background-size:cover;
+        -webkit-background-size:cover;
         z-index:1;
       }
 

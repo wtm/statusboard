@@ -3,6 +3,10 @@
   {{highlight_hashtag shout}}
 {{/if}}
 
+{{#if photo_url}}
+%span{ :class => "image", :style => "background-image:url({{photo_url}});" }
+{{/if}}
+
 %section.meta
   %span{ :class => "avatar x30", :style => "background-image:url({{user.photo}});" }
 
