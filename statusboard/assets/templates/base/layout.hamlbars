@@ -1,15 +1,16 @@
-#sidebar
-  #logo
+#logo
 
+
+#header
   .headline
     .name
       We the Media
     is five.
 
-#header
-  Post to Twitter or Instagram with the hashtag
-  %span.hashtag
-    \#wtmisfive
-  and it’ll show up here!
+  %span.instructions
+    Post to Twitter or Instagram with the hashtag
+    %span.hashtag
+      \#wtmisfive
+    and it’ll show up here!
   
 .line
