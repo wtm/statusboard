@@ -16,19 +16,22 @@ Zepto ($) ->
 		parse: (data) ->
 			_items = @
 
-			checkins = data.response.hereNow.items
-			for checkin in checkins
-				_checkin = new Foursquare.Models.Checkin
-					id: checkin.id
+			if data.meta.code is 403
+				checkins = null
+			else
+				checkins = data.response.hereNow.items
+				for checkin in checkins
+					_checkin = new Foursquare.Models.Checkin
+						id: checkin.id
 
-				_checkin.fetch
-					success: (response) ->
-						data = response.toJSON()
+					_checkin.fetch
+						success: (response) ->
+							data = response.toJSON()
 
-						_real_checkin = _items.get checkin.id
-						_real_checkin.set "photo_url", (data.response?.checkin?.photos?.items?[0].url or "")
+							_real_checkin = _items.get checkin.id
+							_real_checkin.set "photo_url", (data.response?.checkin?.photos?.items?[0].url or "")
 
-				checkin.statusboard_type = "foursquare"
+					checkin.statusboard_type = "foursquare"
 
 			checkins
 
