@@ -9,6 +9,6 @@
   %span{ :class => "avatar x30", :style => "background-image:url({{profile_image_url}});" }
 
   %span.user
-    {{from_user_name}}
+    @{{from_user}}
 
 %span.service

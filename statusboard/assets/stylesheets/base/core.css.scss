@@ -9,8 +9,7 @@ html, body {
 }
 body {
   @include proximaNova;
-  @include retina_sprite("base/background_tile", "jpg", 380px, 380px);
-  background-color:#52565e;
+  background-color:#000;
   color:#949aa3;
   cursor:default;
   font-size:14px;
@@ -26,7 +25,6 @@ a {
 }
 
 #wrapper {
-  background:#000;
   height:100%;
 
   #logo {
@@ -36,10 +34,6 @@ a {
     left:0;
     top:0;
     width:140px;
-  }
-
-  .hashtag {
-    color:#b196dd;
   }
 
   #header {
@@ -54,7 +48,7 @@ a {
 
     .headline {
       @include museeBold;
-      color:#949aa3;
+      color:#b196dd;
       cursor:default;
       font-size:39px;
       font-weight:300;
@@ -62,18 +56,15 @@ a {
       line-height:41px;
       margin-bottom:15px;
       text-transform:uppercase;
+    }
 
-      .name {
-        color:#4b3b73;
+    .instructions {
+      color:#aaa;
+
+      .hashtag {
+        color:#fff;
       }
     }
-  }
-
-  .line {
-    background:rgba(0,0,0,0.1);
-    border-bottom:1px solid rgba(255, 255, 255, 0.1);
-    height:1px;
-    width:100%;
   }
 
   #stream {
@@ -81,6 +72,8 @@ a {
 
     .item {
       @include block_rel_left;
+      // fallback in case there's no image
+      @include inner_shadow(1px, 1px, 0, 0, rgba(255, 255, 255, 0.2));
       height:364px;
       padding:10px 15px;
       overflow:hidden;
@@ -108,6 +101,10 @@ a {
         line-height:32px;
         position:relative;
         z-index:2;
+
+        .hashtag {
+          color:#b196dd;
+        }
       }
 
       .meta {
@@ -155,7 +152,7 @@ a {
         bottom:10px;
         height:24px;
         right:10px;
-        width:24px;
+        width:25px;
         z-index:10;
       }
     }
